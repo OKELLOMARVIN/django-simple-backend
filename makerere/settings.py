@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-5&ehfuk2ymx5+2j#ntr7m3-@9dl*lcbkyi=e+9%txgevmg4f9(
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -42,13 +43,14 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
-    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+CORS_ALLOWED_ORIGINS = ["http://localhost:4200"]
 
 ROOT_URLCONF = 'makerere.urls'
 
